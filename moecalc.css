@@ -1,0 +1,61 @@
+
+body{
+  background:url(./img/bg.jpg) no-repeat;
+  margin:0;
+  padding:0;
+}
+
+.box{
+//  border : solid 1px Black;
+  position: absolute;
+  top:10px;
+  left:14px;
+  width:432px;
+  height:286px;
+}
+
+.frame{
+//  border : solid 1px Black;
+  background:url(./img/Frame.png) no-repeat;
+  position: absolute;
+  top:0px;
+  left:0px;
+//  right:0px;
+  width:311px;
+  height:63px;
+}
+.frameMargin{
+//  border : solid 1px blue;
+  position: relative;
+  top:8px;
+  left:8px;
+  width:295px;
+  height:31px;
+  overflow:hidden;
+}
+.disp{
+  display:inline-block;
+  white-space:nowrap;
+  float:right;
+}
+.dispFont{
+  font-size:32px;
+  color:#ff00ff;
+}
+.dispFontSmall{
+  font-size:18px;
+  color:#ff00ff;
+}
+.inpFrom{
+//  border : solid 1px blue;
+  margin:0;
+  padding:0;
+  position: absolute;
+  left:0px;
+//  right:0px;
+  bottom:0px;
+}
+
+.inpPadding{
+  padding:0px 4px 4px 0px;
+}
