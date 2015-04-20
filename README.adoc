@@ -1,5 +1,4 @@
 // (File name: README.adoc)
-// (Author: SENOO, Ken)
 
 = MoeCalc
 
