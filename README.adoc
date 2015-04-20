@@ -4,10 +4,11 @@
 = MoeCalc
 
 == Introduction
-MoeCalcはデスクトップPCで使える電卓です。
+MoeCalc（萌え電卓）はデスクトップPCで使える電卓です。
 
 moebuntuプロジェクト（http://moebuntu.web.fc2.com/）の一つです。
 
+イラスト（bg.jp）にはジュエルセイバーFREE（http://www.jewel-s.jp/）を利用しています。
 
 == Reference
 moebuntu Wiki：http://moebuntu.wiki.fc2.com/wiki/%E8%90%8C%E3%81%88%E9%9B%BB%E5%8D%93%E3%81%B7%E3%82%8D%E3%81%98%E3%81%87%E3%81%8F%E3%81%A8
