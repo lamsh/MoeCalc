@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>萌え電卓(動作テスト</TITLE>
+<style type="text/css">
+<!--
+.inp{
+width:64px;
+Height:48px;
+font-size:32px;
+color:#ff4cf6;
+background-color:RGBA(255,200,230,0.5);
+}
+
+.balloon {
+  position: relative;
+  width: 480px;
+  border: 2px solid #ff4cf6;
+  background-color:#ffccff;
+  text-align: center;
+  border-radius: 12px;
+}
+.balloon:before {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 80%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid #ff4cf6;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+.balloon:after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  left: 80%;
+  margin-left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 16px solid #ffccff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+-->
+</style>
+</HEAD>
+<BODY>
+<SCRIPT language="JavaScript"><!--
+myTotal = 0;       // 現在の合計値
+myInput = "";      // 現在入力している値
+myCalc  = "+";     // 合計と入力値の演算子
+myFlg   = 1;       // １回前に入力したもの 0:数字 1:演算子
+myWork  = "";
+
+msg0 ="";	//計算中の文字列
+msg1 ="";	//"たす"とか
+
+function myValue(myData){     // 0〜9または小数点ボタンを押した
+  myFlg = 0;
+  myInput += myData;         // 現在入力している値に追加
+  msg0 += myData; 
+//  document.myForm.myLine.value = msg0; // 現在入力している値表示
+  Disp(msg0);
+
+}
+
+function myCalculate(myData){ // 演算ボタンを押した
+  myWork = myWork + myCalc + myInput;    // 一連の計算式を作る
+
+  if (myFlg==0){             // １回前に入力したものは数値か？
+    myFlg = 1;
+    if( myData == '+')
+      msg1 = "たす";
+    else if( myData == '-')
+      msg1 = "ひく";
+    else if( myData == '*')
+      msg1 = "かける";
+    else if( myData == '/')
+      msg1 = "わる";
+    else if( myData == '=')
+    {
+      msg1 = "は" + "</font>" + eval(myWork) + "<font size=3>";
+      if(Math.floor(Math.random() * 2) == 0)
+        msg1 += "だよ";
+      else
+        msg1 += "になったよ";
+    }
+    else
+      msg1 = "";
+    msg0 += "<font size=3>" + msg1 + "</font>";
+//    document.myForm.myLine.value = msg0; // 合計を表示
+    Disp(msg0);
+
+    myInput = "";                           // 現在入力している値をクリア
+  }
+  if (myData == "="){    // 演算ボタンは[＝]か？
+    myTotal = 0;        // 合計をクリア
+    myCalc = "+";       // 演算子を[+]とする
+    msg0 = "";  //表示バッファクリアでOK?
+    myWork ="";
+  } else {                 // 演算ボタンは[＝]以外である
+    myCalc = myData;    // 演算子を退避させておく
+  }
+}
+
+function Disp(msg)
+{
+  document.getElementById("MsgDisp").innerHTML = msg;//innerHTMLで書き込み
+}
+
+function myC(){                            // クリアボタンを押した
+  myTotal = 0;                            // 合計クリア
+  myCalc = "+";                           // 演算子クリア
+  myInput = "";                           // 現在入力している値をクリア
+  msg0 = "";   // 表示バッファクリア
+  myWork ="";
+//  document.myForm.myLine.value = myTotal; // つまり、０を表示
+  Disp("0");
+
+}
+// --></SCRIPT>
+<table border="0" background="bg.jpg" style="width:768px;height:480px;">
+<tr><td>
+<div class="balloon" style="text-align:right;padding:4px 10px 4px 4px;">
+<span id="MsgDisp" style="font-size:36px; color:#ff4cf6;" />0
+</div>
+
+</td></tr>
+<tr valign=bottom><td align=left>
+<TABLE>
+<TR>
+<TD align="center"><INPUT class="inp" type="button" value=" ７ " onclick="myValue(7)" ></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ８ " onclick="myValue(8)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ９ " onclick="myValue(9)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value="÷" onclick="myCalculate('/')"></TD>
+<TD align="center"><INPUT class="inp" type="button" value="Ｃ" onclick="myC()"></TD>
+</TR>
+<TR>
+<TD align="center"><INPUT class="inp" type="button" value=" ４ " onclick="myValue(4)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ５ " onclick="myValue(5)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ６ " onclick="myValue(6)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value="×" onclick="myCalculate('*')"></TD>
+<td/>
+</TR>
+<TR>
+<TD align="center"><INPUT class="inp" type="button" value=" １ " onclick="myValue(1)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ２ " onclick="myValue(2)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ３ " onclick="myValue(3)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value="−" onclick="myCalculate('-')"></TD>
+<td/>
+</TR>
+<TR>
+<TD align="center"><INPUT class="inp" type="button" value=" ０ " onclick="myValue(0)"></TD>
+<TD align="center"><INPUT class="inp" type="button" value=" ・ " onclick="myValue('.')"></TD>
+<td/>
+<TD align="center"><INPUT class="inp" type="button" value=" ＋ " onclick="myCalculate('+')"></TD>
+<TD align="center"><INPUT class="inp" type="button" value="＝" onclick="myCalculate('=')"></TD>
+</TR>
+</TABLE>
+</FORM>
+</td></tr>
+</table>
+</BODY>
+</HTML>

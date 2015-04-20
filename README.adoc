@@ -2,7 +2,6 @@
 // (Author: SENOO, Ken)
 
 = MoeCalc
-Ken SENOO
 
 == Introduction
 MoeCalcはデスクトップPCで使える電卓です。
