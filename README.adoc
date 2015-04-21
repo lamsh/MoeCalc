@@ -9,5 +9,7 @@ moebuntuプロジェクト（http://moebuntu.web.fc2.com/）の一つです。
 
 イラスト（bg.jp）にはジュエルセイバーFREE（http://www.jewel-s.jp/）を利用しています。
 
+This program is based on Chromium. Chromium is licensed by the MIT License, the LGPL, the BSD, the Ms-PL and an MPL/GPL/LGPL tri-license. 
+
 == Reference
 moebuntu Wiki：http://moebuntu.wiki.fc2.com/wiki/萌え電卓ぷろじぇくと
