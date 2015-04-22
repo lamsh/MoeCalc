@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<HTML lang="ja">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>MoeCalc v0.3</TITLE>
+<LINK href="./moecalc.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./moecalc.js"></script>
+</HEAD>
+<BODY>
+
+
+<div class="box">
+
+<!-- 表示部 -->
+<div class="frame">
+  <div class="frameMargin">
+    <div class="disp">
+      <span id="MsgDisp" class="dispFont" />0
+    </div>
+  </div>
+  <p style="float:none;"/>
+</div>
+
+
+<!-- 入力部 -->
+<TABLE class="inpFrom" cellpadding=0 cellspacing=0>
+  <TR>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num7.png" onclick="myValue(7)" ></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num8.png" onclick="myValue(8)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num9.png" onclick="myValue(9)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numDiv.png" onclick="myCalculate('/')"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numCl.png" onclick="myC()"></TD>
+  </TR>
+  <TR>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num4.png" onclick="myValue(4)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num5.png" onclick="myValue(5)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num6.png" onclick="myValue(6)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numMul.png" onclick="myCalculate('*')"></TD>
+  <td/>
+  </TR>
+  <TR>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num1.png" onclick="myValue(1)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num2.png" onclick="myValue(2)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num3.png" onclick="myValue(3)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numSub.png" onclick="myCalculate('-')"></TD>
+    <td/>
+  </TR>
+  <TR>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num0.png" onclick="myValue(0)"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numPo.png" onclick="myValue('.')"></TD>
+    <td/>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numPlus.png" onclick="myCalculate('+')"></TD>
+    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numEq.png" onclick="myCalculate('=')"></TD>
+  </TR>
+</TABLE>
+
+</div>
+
+</BODY>
+</HTML>

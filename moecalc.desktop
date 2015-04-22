@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=moecalc
+GenericName=MoeCalc
+Icon=/opt/MoeCalc/moecalc.png
+Exec=moecalc
+Terminal=false
+
