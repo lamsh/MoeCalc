@@ -1,8 +1,10 @@
 
 body{
-  background:url(./img/bg.jpg) no-repeat;
+  background:url(/opt/MoeCalc/bg.jpg) no-repeat;
   margin:0;
   padding:0;
+  background-size:100% auto;
+  background-color: #fff4ff;
 }
 
 .box{
@@ -11,7 +13,7 @@ body{
   top:10px;
   left:14px;
   width:432px;
-  height:286px;
+  height:256px;
 }
 
 .frame{
@@ -22,15 +24,15 @@ body{
   left:0px;
 //  right:0px;
   width:311px;
-  height:63px;
+  height:53px;
 }
 .frameMargin{
 //  border : solid 1px blue;
   position: relative;
-  top:8px;
+  top:2px;
   left:8px;
   width:295px;
-  height:31px;
+  height:32px;
   overflow:hidden;
 }
 .disp{
@@ -41,10 +43,14 @@ body{
 .dispFont{
   font-size:32px;
   color:#ff00ff;
+  font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 }
 .dispFontSmall{
   font-size:18px;
   color:#ff00ff;
+  font-family: "setofont","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif ;
+  letter-spacing: -2px;
+
 }
 .inpFrom{
 //  border : solid 1px blue;
@@ -57,5 +63,5 @@ body{
 }
 
 .inpPadding{
-  padding:0px 4px 4px 0px;
+  padding:0px 4px 1px 0px;
 }
