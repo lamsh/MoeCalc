@@ -7,17 +7,12 @@
 ##
 ## This script is performing following:
 ## * Copy moecalc.desktop and this directory.
-## * If 'moecalc' word is exsiting ~/.profile, append PATH config.
+## * Link /opt/MoeCalc/moecalc to /usr/bin/moecalc
 ##
-## After run this script, login again. You can find MoeCalc app in DASH.
+## After run this script, you can find MoeCalc app in DASH or run MoeCalc by following command in terminal:
+## moecalc
 
 cp ./moecalc.desktop ~/.local/share/applications/
-
 mkdir -p /opt/MoeCalc
 cp -r ./* /opt/MoeCalc/
-
-if grep -iq 'moecalc' ~/.profile; then
-  exit
-else
-  echo 'export PATH=$PATH:/opt/MoeCalc' >> ~/.profile
-fi
+ln -s /opt/MoeCalc/moecalc /usr/bin/

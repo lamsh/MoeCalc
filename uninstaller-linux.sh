@@ -7,9 +7,8 @@
 ##
 ## This script is performing following:
 ## * Delete  moecalc.desktop and /opt/MoeCalc directory.
-## * Delete MoeCalc PATH config in ~/.profile.
+## * Delete /usr/bin/moecalc.
 
 rm ~/.local/share/applications/moecalc.desktop
 rm -rf /opt/MoeCalc
-
-sed -i '/export PATH=$PATH:\/opt\/MoeCalc/d' ~/.profile
+rm /usr/bin/moecalc
