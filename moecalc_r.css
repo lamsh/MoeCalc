@@ -1,12 +1,11 @@
 
 body{
-  background:url(./bg.jpg) no-repeat;
+  background:url(./bgr.jpg) no-repeat;
   background-position:0pt 28pt;
   margin:0;
   padding:0;
-//  -moz-background-size:cover;
-background-size:100% auto;
-//  background-size:cover;
+  -moz-background-size:cover;
+  background-size:cover;
   background-color: #fc7eb4;
 }
 
@@ -14,18 +13,17 @@ background-size:100% auto;
 //  border : solid 1px Black;
   position: absolute;
   top:10px;
-  left:14px;
+  right:14px;
   width:332px;
-  height:290px;
+  height:294px;
 }
 
 .frame{
 //  border : solid 1px Black;
-  background:url(./img/Frame.png) no-repeat;
+  background:url(./img/Frame_r.png) no-repeat;
   position: absolute;
   top:0px;
-  left:0px;
-//  right:0px;
+  right:0px;
   width:311px;
   height:53px;
 }
@@ -60,8 +58,8 @@ background-size:100% auto;
   margin:0;
   padding:0;
   position: absolute;
-  left:0px;
-//  right:0px;
+//  left:0px;
+  right:0px;
   bottom:0px;
 }
 

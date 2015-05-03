@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=moecalc
+Name=MoeCalc
 GenericName=MoeCalc
 Icon=/opt/MoeCalc/moecalc.png
 Exec=moecalc

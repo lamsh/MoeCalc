@@ -1,11 +1,11 @@
 
-MoeCalc v0.4
+MoeCalc v0.5
 
 ライセンス GPL
 
 Author：TOY 「萌え萌えmoebuntu」（http://moebuntu.blog48.fc2.com/）
 
-この萌え電卓は「ちる９のメモ帳」（http://cir9prog.seesaa.net/）さんからいただいたデータを改変したものです。
+この萌え電卓は「ちる９のメモ帳」（http://cir9prog.seesaa.net/）さんの【萌え電卓】貼れるのか？（http://cir9prog.seesaa.net/article/417084823.html）のデータを元に改変したものです。
 
 インストーラーはsenopenさん「My Future Sight for Past」（http://myfuturesightforpast.blogspot.jp/）が提供してくださいました。
 
