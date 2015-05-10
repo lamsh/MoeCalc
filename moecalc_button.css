@@ -1,0 +1,99 @@
+/****************************************************************************
+**
+**  萌え電卓 CSS ボタン制御関係ファイル
+**
+**    ボタンの押した時などの表示設定です。
+**    ボタンサイズを変更したときに修正します。
+**
+****************************************************************************/
+
+
+/* http://www.kanaya440.com/contents/tips/html/007.htmlを参考 */
+
+ul#globalnavi{
+    width:28px;
+    overflow:hidden;
+}
+
+ul#globalnavi li{
+    float:left;
+    height:28px;
+    display:block;
+}
+
+ul#globalnavi li span {
+    display: block;
+    overflow: hidden;
+    height: 0px;
+    padding-top:28px;
+}
+
+.btnImg0nomal { width:28px; background-position:   0px  0;}
+.btnImg1nomal { width:28px; background-position: -28px  0;}
+.btnImg2nomal { width:28px; background-position: -56px  0;}
+.btnImg3nomal { width:28px; background-position: -84px  0;}
+.btnImg4nomal { width:28px; background-position:-112px  0;}
+.btnImg5nomal { width:28px; background-position:-140px  0;}
+.btnImg6nomal { width:28px; background-position:-168px  0;}
+.btnImg7nomal { width:28px; background-position:-196px  0;}
+.btnImg8nomal { width:28px; background-position:-224px  0;}
+.btnImg9nomal { width:28px; background-position:-252px  0;}
+
+.btnImgPonomal   { width:28px; background-position:   0px  -84px;}
+.btnImgPlusnomal { width:28px; background-position: -28px  -84px;}
+.btnImgSubnomal  { width:28px; background-position: -56px  -84px;}
+.btnImgMulnomal  { width:28px; background-position: -84px  -84px;}
+.btnImgDivnomal  { width:28px; background-position:-112px  -84px;}
+.btnImgEqnomal   { width:28px; background-position:-140px  -84px;}
+.btnImgClnomal   { width:28px; background-position:-168px  -84px;}
+.btnImgPhLnomal  { width:28px; background-position:-196px  -84px;}
+.btnImgPhRnomal  { width:28px; background-position:-224px  -84px;}
+.btnImgBsnomal   { width:28px; background-position:-252px  -84px;}
+
+
+.btnImg0hover { width:28px; background-position:   0px  -28px;}
+.btnImg1hover { width:28px; background-position: -28px  -28px;}
+.btnImg2hover { width:28px; background-position: -56px  -28px;}
+.btnImg3hover { width:28px; background-position: -84px  -28px;}
+.btnImg4hover { width:28px; background-position:-112px  -28px;}
+.btnImg5hover { width:28px; background-position:-140px  -28px;}
+.btnImg6hover { width:28px; background-position:-168px  -28px;}
+.btnImg7hover { width:28px; background-position:-196px  -28px;}
+.btnImg8hover { width:28px; background-position:-224px  -28px;}
+.btnImg9hover { width:28px; background-position:-252px  -28px;}
+
+.btnImgPohover   { width:28px; background-position:   0px -112px;}
+.btnImgPlushover { width:28px; background-position: -28px -112px;}
+.btnImgSubhover  { width:28px; background-position: -56px -112px;}
+.btnImgMulhover  { width:28px; background-position: -84px -112px;}
+.btnImgDivhover  { width:28px; background-position:-112px -112px;}
+.btnImgEqhover   { width:28px; background-position:-140px -112px;}
+.btnImgClhover   { width:28px; background-position:-168px -112px;}
+.btnImgPhLhover  { width:28px; background-position:-196px -112px;}
+.btnImgPhRhover  { width:28px; background-position:-224px -112px;}
+.btnImgBshover   { width:28px; background-position:-252px -112px;}
+
+
+.btnImg0Down { width:28px; background-position:   0px  -56px;}
+.btnImg1Down { width:28px; background-position: -28px  -56px;}
+.btnImg2Down { width:28px; background-position: -56px  -56px;}
+.btnImg3Down { width:28px; background-position: -84px  -56px;}
+.btnImg4Down { width:28px; background-position:-112px  -56px;}
+.btnImg5Down { width:28px; background-position:-140px  -56px;}
+.btnImg6Down { width:28px; background-position:-168px  -56px;}
+.btnImg7Down { width:28px; background-position:-196px  -56px;}
+.btnImg8Down { width:28px; background-position:-224px  -56px;}
+.btnImg9Down { width:28px; background-position:-252px  -56px;}
+
+.btnImgPoDown   { width:28px; background-position:   0px -140px;}
+.btnImgPlusDown { width:28px; background-position: -28px -140px;}
+.btnImgSubDown  { width:28px; background-position: -56px -140px;}
+.btnImgMulDown  { width:28px; background-position: -84px -140px;}
+.btnImgDivDown  { width:28px; background-position:-112px -140px;}
+.btnImgEqDown   { width:28px; background-position:-140px -140px;}
+.btnImgClDown   { width:28px; background-position:-168px -140px;}
+.btnImgPhLDown  { width:28px; background-position:-196px -140px;}
+.btnImgPhRDown  { width:28px; background-position:-224px -140px;}
+.btnImgBsDown   { width:28px; background-position:-252px -140px;}
+
+

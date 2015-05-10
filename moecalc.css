@@ -4,38 +4,38 @@ body{
   background-position:0pt 28pt;
   margin:0;
   padding:0;
-//  -moz-background-size:cover;
-background-size:100% auto;
-//  background-size:cover;
+  background-size:100% auto;
   background-color: #fc7eb4;
 }
 
-.box{
-//  border : solid 1px Black;
+/*#bg {
+  width:100vmax;
+  height:100vh;
+}*/
+
+
+/*.box{
+  position: absolute;
+  top:10%;
+  left:10%;
+  width:328px;
+  height:290px;
+}*/
+
+.frame{
+  background:url(./img/Frame.png) no-repeat;
   position: absolute;
   top:10px;
   left:14px;
-  width:332px;
-  height:290px;
-}
-
-.frame{
-//  border : solid 1px Black;
-  background:url(./img/Frame.png) no-repeat;
-  position: absolute;
-  top:0px;
-  left:0px;
-//  right:0px;
   width:311px;
   height:53px;
 }
 .frameMargin{
-//  border : solid 1px blue;
   position: relative;
-  top:2px;
+  top:5px;
   left:8px;
   width:295px;
-  height:32px;
+  height:28px;
   overflow:hidden;
 }
 .disp{
@@ -44,9 +44,11 @@ background-size:100% auto;
   float:right;
 }
 .dispFont{
-  font-size:32px;
+  font-size:28px;
   color:#ff00ff;
+//  font-family: "setofont","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif ;
   font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+//  letter-spacing: -2px;
 }
 .dispFontSmall{
   font-size:18px;
@@ -55,16 +57,52 @@ background-size:100% auto;
   letter-spacing: -2px;
 
 }
-.inpFrom{
-//  border : solid 1px blue;
-  margin:0;
-  padding:0;
-  position: absolute;
-  left:0px;
-//  right:0px;
-  bottom:0px;
-}
 
 .inpPadding{
   padding:0px 4px 1px 0px;
 }
+
+/* ボタン関係 */
+#inpFrom{
+  margin:0;
+  padding:0;
+  position: absolute;
+  left:3%;
+//  right:0px;
+  top:54%;
+  width:192px;
+  height:130px;
+}
+
+
+/* ボタン背景 */
+.btnBg {
+  background:url(./img/Button-Pink.svg) no-repeat;
+}
+
+
+/* ボタン配置 */
+.btnPos7    { position: absolute; top:  0px; left:  0px;}
+.btnPos8    { position: absolute; top:  0px; left: 33px;}
+.btnPos9    { position: absolute; top:  0px; left: 66px;}
+.btnPosDiv  { position: absolute; top:  0px; left:99px;}
+.btnPosCl   { position: absolute; top:  0px; left:132px;}
+
+.btnPos4    { position: absolute; top: 33px; left:  0px;}
+.btnPos5    { position: absolute; top: 33px; left: 33px;}
+.btnPos6    { position: absolute; top: 33px; left: 66px;}
+.btnPosMul  { position: absolute; top: 33px; left:99px;}
+.btnPosPhL  { position: absolute; top: 33px; left:132px;}
+
+.btnPos1    { position: absolute; top: 66px; left:  0px;}
+.btnPos2    { position: absolute; top: 66px; left: 33px;}
+.btnPos3    { position: absolute; top: 66px; left: 66px;}
+.btnPosSub  { position: absolute; top: 66px; left:99px;}
+.btnPosPhR  { position: absolute; top: 66px; left:132px;}
+
+.btnPos0    { position: absolute; top:99px; left:  0px;}
+.btnPosPo   { position: absolute; top:99px; left: 33px;}
+.btnPosBs   { position: absolute; top:99px; left: 66px;}
+.btnPosPlus { position: absolute; top:99px; left:99px;}
+.btnPosEq   { position: absolute; top:99px; left:132px;}
+

@@ -2,22 +2,27 @@
 <HTML lang="ja">
 <HEAD>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<TITLE>MoeCalc v0.5</TITLE>
+<TITLE>MoeCalc v0.6</TITLE>
 <LINK href="./moecalc.css" rel="stylesheet" type="text/css">
+<LINK href="./moecalc_button.css" rel="stylesheet" type="text/css">
 <LINK href="./navi.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="./moecalc.js"></script>
+<script type="text/javascript" src="./moecalc_resize.js"></script>
+<script type="text/javascript" src="./moecalc_conf.js"></script>
+<script type="text/javascript" src="./moecalc_proc.js"></script>
+
 </HEAD>
 <BODY>
 
 <!-- ナビ -->
 <div id="nav">
-    <ul> 		
-        <li><a href="index.html">LEFT</a></li> 	
-        <li><a href="right.html">RIGHT</a></li> 	
-        <li><a href="about.html">ABOUT</a></li> 
-    </ul> 
+    <ul>
+        <li><a href="index.html">LEFT</a></li>
+        <li><a href="right.html">RIGHT</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+    </ul>
 
-<div class="box">
+<!--<div class="box">
 
 <!-- 表示部 -->
 <div class="frame">
@@ -31,40 +36,35 @@
 
 
 <!-- 入力部 -->
-<TABLE class="inpFrom" cellpadding=0 cellspacing=0>
-  <TR>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num7.png" onclick="myValue(7)" onMouseOver=src="./img/num7b.png" onMouseOut=src="./img/num7.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num8.png" onclick="myValue(8)" onMouseOver=src="./img/num8b.png" onMouseOut=src="./img/num8.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num9.png" onclick="myValue(9)" onMouseOver=src="./img/num9b.png" onMouseOut=src="./img/num9.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numDiv.png" onclick="myCalculate('/')" onMouseOver=src="./img/numDivb.png" onMouseOut=src="./img/numDiv.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numCl.png" onclick="myC()" onMouseOver=src="./img/numClb.png" onMouseOut=src="./img/numCl.png"></TD>
-  </TR>
-  <TR>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num4.png" onclick="myValue(4)" onMouseOver=src="./img/num4b.png" onMouseOut=src="./img/num4.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num5.png" onclick="myValue(5)" onMouseOver=src="./img/num5b.png" onMouseOut=src="./img/num5.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num6.png" onclick="myValue(6)" onMouseOver=src="./img/num6b.png" onMouseOut=src="./img/num6.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numMul.png" onclick="myCalculate('*')" onMouseOver=src="./img/numMulb.png" onMouseOut=src="./img/numMul.png"></TD>
-  <td/>
-  </TR>
-  <TR>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num1.png" onclick="myValue(1)" onMouseOver=src="./img/num1b.png" onMouseOut=src="./img/num1.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num2.png" onclick="myValue(2)" onMouseOver=src="./img/num2b.png" onMouseOut=src="./img/num2.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num3.png" onclick="myValue(3)" onMouseOver=src="./img/num3b.png" onMouseOut=src="./img/num3.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numSub.png" onclick="myCalculate('-')" onMouseOver=src="./img/numSubb.png" onMouseOut=src="./img/numSub.png"></TD>
-    <td/>
-  </TR>
-  <TR>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/num0.png" onclick="myValue(0)" onMouseOver=src="./img/num0b.png" onMouseOut=src="./img/num0.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numPo.png" onclick="myValue('.')" onMouseOver=src="./img/numPob.png" onMouseOut=src="./img/numPo.png"></TD>
-    <td/>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numPlus.png" onclick="myCalculate('+')" onMouseOver=src="./img/numPlusb.png" onMouseOut=src="./img/numPlus.png"></TD>
-    <TD align="center" class="inpPadding"><INPUT type="image" src="./img/numEq.png" onclick="myCalculate('=')" onMouseOver=src="./img/numEqb.png" onMouseOut=src="./img/numEq.png"></TD>
-  </TR>
-</TABLE>
+<div id="inpFrom">
+  <ul id="globalnavi">
+      <li class="btnPos7"><span class="btnImg7"/></li>
+      <li class="btnPos8"><span class="btnImg8"/></li>
+      <li class="btnPos9"><span class="btnImg9"/></li>
+      <li class="btnPosDiv"><span class="btnImgDiv"/></li>
+      <li class="btnPosCl"><span class="btnImgCl"/></li>
 
+      <li class="btnPos4"><span class="btnImg4"/></li>
+      <li class="btnPos5"><span class="btnImg5"/></li>
+      <li class="btnPos6"><span class="btnImg6"/></li>
+      <li class="btnPosMul"><span class="btnImgMul"/></li>
+      <li class="btnPosPhL"><span class="btnImgPhL"/></li>
+
+      <li class="btnPos1"><span class="btnImg1"/></li>
+      <li class="btnPos2"><span class="btnImg2"/></li>
+      <li class="btnPos3"><span class="btnImg3"/></li>
+      <li class="btnPosSub"><span class="btnImgSub"/></li>
+      <li class="btnPosPhR"><span class="btnImgPhR"/></li>
+
+      <li class="btnPos0"><span class="btnImg0"/></li>
+      <li class="btnPosPo"><span class="btnImgPo"/></li>
+      <li class="btnPosBs"><span class="btnImgBs"/></li>
+      <li class="btnPosPlus"><span class="btnImgPlus"/></li>
+      <li class="btnPosEq"><span class="btnImgEq"/></li>
+  </ul>
 </div>
 
-</div> 
+<!--</div> -->
 
 
 </BODY>
