@@ -12,6 +12,10 @@
 var inputBuff = "";         // 入力バッファ
 var ParenthesesCount = 0;   // 括弧の数
 
+// 定数
+var ErrorString = "Error";  // エラー
+
+// 演算子とか
 var optCode = {
   Plus: '+',
   Sub: '-',
@@ -35,7 +39,8 @@ function Push(PushData) {
     
     //
     if(inputBuff.length ==0) {
-      inputBuff = ErrorMessage3[ Math.floor(Math.random() * ErrorMessage3.length)];
+//      inputBuff = ErrorMessage3[ Math.floor(Math.random() * ErrorMessage3.length)];
+      inputBuff = ErrorString + "3";
     } else {
       Calc();
     }
@@ -55,6 +60,7 @@ function Push(PushData) {
     var ch = inputBuff.charAt(inputBuff.length - 1);
     console.log("ch : " + ch);
     if(inputBuff.length ==0 || OperatorCheck(ch) > 0 || ch == "(") {
+      console.log("NG?");
     } else {
       return;
     }
@@ -76,11 +82,27 @@ function Push(PushData) {
 
   } else if(optChk != null) {
     // 演算子
-    inputBuff += optChk;
-
+    var chk = inputBuff.charAt(inputBuff.length-1);
+    console.log("chk : " + chk);
+    if(chk == "(") {
+      if(optChk == "-") {
+        inputBuff += optChk;
+      }
+    } else if(OperatorCheck(chk) == -1) {
+      inputBuff += optChk;
+    } else {
+      if(optChk == "-") {
+        if(OperatorCheck(inputBuff.charAt(inputBuff.length-1)) == 2) {
+        } else {
+          inputBuff += optChk;
+        }
+      }
+    }
   } else {
-    // 入力バッファに追加
-    inputBuff += PushData;
+    if(inputBuff.charAt(inputBuff.length-1) != ")") {
+      // 入力バッファに追加
+      inputBuff += PushData;
+    }
   }
 
   // デバック表示
@@ -129,12 +151,12 @@ function Calc()
   {
     var ans = evalEx();
     if(ans == Number.POSITIVE_INFINITY || ans == Number.NEGATIVE_INFINITY) {
-      inputBuff = ErrorMessage2[ Math.floor(Math.random() * ErrorMessage2.length)];
+      inputBuff = ErrorString + "2";
     } else {
       inputBuff += "=" + ans;
     }
   } catch(ex) {
-    inputBuff = ErrorMessage1[ Math.floor(Math.random() * ErrorMessage1.length)];;
+      inputBuff = ErrorString + "1";
   }
   // デバック表示
   console.log("ans > " + inputBuff);
@@ -143,6 +165,12 @@ function Calc()
 // 小数点以下切り捨て
 function evalEx()
 {
+  // "//"が含まれている場合はエラーとする
+  if(inputBuff.indexOf("//") != -1) {
+    throw "Error";
+    return;
+  }
+  
   // 取りあえず計算
   ans = eval(inputBuff);
   
@@ -165,6 +193,12 @@ function Disp() {
   var DispMsg = ""; // 表示メッセージ
   var EqFlg = 0;    // イコール出現フラグ
   
+  // エラーメッセージ表示の場合は別処理
+  if(inputBuff.substr(0,5) == ErrorString) {
+    ErrorDisp(inputBuff);
+    return;
+  }
+  
   for(i = 0; i < inputBuff.length; i++) {
     // 1文字取り出し
     var ch = inputBuff.charAt(i);
@@ -175,12 +209,20 @@ function Disp() {
       switch(op)
       {
         case 1: // +
-          DispMsg += "<span class='dispFontSmall'>"
+            DispMsg += "<span class='dispFontSmall'>"
             + dispPlus[Math.floor(Math.random() * dispPlus.length)] + "</span>";
           break;
         case 2: // -
-          DispMsg += "<span class='dispFontSmall'>"
-            + dispMinus[Math.floor(Math.random() * dispMinus.length)] + "</span>";
+          if(OperatorCheck(inputBuff.charAt(i-1)) == -1 && i > 0) {
+            if(inputBuff.charAt(i-1) == "(") {
+              DispMsg += "-";
+            } else {
+              DispMsg += "<span class='dispFontSmall'>"
+                + dispMinus[Math.floor(Math.random() * dispMinus.length)] + "</span>";
+            }
+          } else {
+            DispMsg += "-";
+          }
           break;
         case 3: // *
           DispMsg += "<span class='dispFontSmall'>"
@@ -214,6 +256,32 @@ function Disp() {
   document.getElementById("MsgDisp").innerHTML = DispMsg; //innerHTMLで書き込み
 }
 
+/* エラーメッセージ表示 */
+function ErrorDisp() {
+  var i = inputBuff.substr(5,1);
+  
+  var DispMsg ="";
+  switch(i) {
+    case "1":
+      DispMsg = ErrorMessage1[ Math.floor(Math.random() * ErrorMessage3.length)];
+      break;
+    case "2":
+      DispMsg = ErrorMessage2[ Math.floor(Math.random() * ErrorMessage3.length)];
+      break;
+    case "3":
+      DispMsg = ErrorMessage3[ Math.floor(Math.random() * ErrorMessage3.length)];
+      break;
+    default:
+      DispMsg = "想定外";
+      break;
+  }
+  
+  DispMsg = "<span class='dispFontError'>"
+    + DispMsg
+    + "</span>";
+  
+  document.getElementById("MsgDisp").innerHTML = DispMsg; //innerHTMLで書き込み
+}
 
 // http://www.nxworld.net/tips/button-mouseover-event.html からコピペ
 function smartRollover() {

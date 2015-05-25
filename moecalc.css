@@ -25,15 +25,15 @@ body{
 .frame{
   background:url(./img/Frame.png) no-repeat;
   position: absolute;
-  top:10px;
-  left:14px;
-  width:311px;
-  height:53px;
+  top:0px;
+  left:0px;
+  width:326px;
+  height:63px;
 }
 .frameMargin{
   position: relative;
   top:5px;
-  left:8px;
+  left:14px;
   width:295px;
   height:28px;
   overflow:hidden;
@@ -43,6 +43,8 @@ body{
   white-space:nowrap;
   float:right;
 }
+
+/* 数字フォント */
 .dispFont{
   font-size:28px;
   color:#ff00ff;
@@ -50,12 +52,19 @@ body{
   font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
 //  letter-spacing: -2px;
 }
+/* 数字以外のフォント */
 .dispFontSmall{
   font-size:18px;
   color:#ff00ff;
   font-family: "setofont","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif ;
   letter-spacing: -2px;
-
+}
+/* エラー時のフォント */
+.dispFontError{
+  font-size : 26px;
+  color:#ff00ff;
+  font-family: "setofont","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",'メイリオ',Meiryo,Helvetica,Arial,Sans-Serif ;
+  letter-spacing: -2px;
 }
 
 .inpPadding{
